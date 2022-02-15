@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+    public static void main(String[] args) throws Exception{
         System.out.println("La version Statique !!");
         IDaoImpl dao = new IDaoImpl();
         IMetierImpl metier = new IMetierImpl();
