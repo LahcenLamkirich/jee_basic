@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         System.out.println("La version Statique !!");
         IDaoImpl dao = new IDaoImpl();
         IMetierImpl metier = new IMetierImpl();
@@ -25,11 +25,11 @@ public class Main {
         // la declaration de la class DAO:
         Scanner scanner = new Scanner(new File("classes.txt"));
         String ClassNameDao = scanner.nextLine();
-        Class DAO = Class.forName(ClassNameDao) ;
-        IDaoImpl dao1 =(IDaoImpl) DAO.newInstance() ;
+        Class DAO = Class.forName(ClassNameDao);
+        IDaoImpl dao1 = (IDaoImpl) DAO.newInstance();
         // la declaration de la class Metier :
-        Class METIER = Class.forName("metier.IMetierImpl") ;
-        IMetierImpl metier1 = (IMetierImpl) METIER.newInstance() ;
+        Class METIER = Class.forName("metier.IMetierImpl");
+        IMetierImpl metier1 = (IMetierImpl) METIER.newInstance();
         Method methode = metier1.getClass().getMethod("setDao", IDaoImpl.class);
         methode.invoke(metier1, dao1);
         System.out.println("La version Dynamique !!");
